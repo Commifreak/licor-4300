@@ -56,7 +56,7 @@ namespace Licor4300_Collect
         static void Main(string[] args)
         {
             MessageBox.Show("This tool reads all Groups/Runs of an Licor 4300 and saves the to disk als .tiff", "Licor 4300", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string host = Interaction.InputBox("Please enter Hostname/IP of the 4300", "Enter Hostname/IP", "http://172.31.29.3/", -1, -1);
+            string host = Interaction.InputBox("Please enter Hostname/IP of the 4300", "Enter Hostname/IP", "http://", -1, -1);
             string user = Interaction.InputBox("Please enter Username for login", "Enter Username", "service", -1, -1);
             string pass = Interaction.InputBox("Please enter Password for login", "Enter Password", "service", -1, -1);
 
