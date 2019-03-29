@@ -273,7 +273,7 @@ namespace Licor4300_Collect
 
 
 
-                            tmpReq2 = WebRequest.Create(host + "/scan/image/" + scan + ".tif?xml=%3Cimage%3E%3Cin%3E%3Cscangroup%3E" + group + "%3C/scangroup%3E%3Cscan%3E" + scan + "%3C/scan%3E%3Cformat%3Etiff%3C/format%3E%3Cchannel%3E900%3C/channel%3E%3C/in%3E%3C/image%3E");
+                            tmpReq2 = WebRequest.Create(host + "/scan/image/" + scan + ".tif?xml=%3Cimage%3E%3Cin%3E%3Cscangroup%3E" + group + "%3C/scangroup%3E%3Cscan%3E" + scan + "%3C/scan%3E%3Cformat%3Etiff%3C/format%3E%3Cchannel%3E800%3C/channel%3E%3C/in%3E%3C/image%3E");
                             tmpReq2.Headers.Add("Authorization", "Basic " + encoded);
 
                             tmpRes2 = tmpReq2.GetResponse();
