@@ -140,7 +140,15 @@ namespace Licor4300_Collect
             var doc2 = new HtmlAgilityPack.HtmlDocument();
 
             int groupCount = 0;
-            int allGroups = node.Descendants().Count();
+            int allGroups = 0;
+
+            foreach (var nNodeCnt in node.Descendants())
+            {
+                if (nNodeCnt.NodeType == HtmlNodeType.Element)
+                {
+                    allGroups++;
+                }
+            }
 
             foreach (var nNode in node.Descendants())
             {
@@ -157,7 +165,7 @@ namespace Licor4300_Collect
 
                     groupCount++;
 
-                    Console.WriteLine("Processing group: " + group + "("+groupCount+"/"+allGroups+")");
+                    Console.WriteLine("Processing group: " + group + "("+groupCount+"/"+allGroups+")"+Environment.NewLine);
                     Directory.CreateDirectory(selectedPath + @"\" + group);
                     
 
@@ -213,9 +221,17 @@ namespace Licor4300_Collect
                     string tmpResponseText2 = null;
 
                     int runCount = 0;
-                    int allRuns = node2.Descendants().Count();
+                    int allRuns = 0;
 
-                    foreach (var nNode2 in node2.Descendants())
+                    foreach (var nNode2Cnt in node2.Descendants())
+                    {
+                        if (nNode2Cnt.NodeType == HtmlNodeType.Element)
+                        {
+                            allRuns++;
+                        }
+                    }
+
+                        foreach (var nNode2 in node2.Descendants())
                     {
                         if (nNode2.NodeType == HtmlNodeType.Element)
                         {
@@ -230,7 +246,7 @@ namespace Licor4300_Collect
                             runCount++;
 
                             //Console.WriteLine("        Processing scan: " + scan);
-                            drawTextProgressBar(runCount, node2.Descendants().Count());
+                            drawTextProgressBar(runCount, allRuns);
                             //Console.WriteLine("             Processing 700");
 
                             //Directory.CreateDirectory(selectedPath + @"LiCor4300\" + group + @"\" + scan);
