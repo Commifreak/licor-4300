@@ -297,7 +297,7 @@ namespace Licor4300_Collect
                             byte[] lnByte2 = null;
                             using (var reader2 = new System.IO.BinaryReader(tmpRes2.GetResponseStream()))
                             {
-                                lnByte2 = reader2.ReadBytes(1 * 1024 * 1024 * 50);
+                                lnByte2 = reader2.ReadBytes(1 * 1024 * 1024 * 500);
 
                             }
 
