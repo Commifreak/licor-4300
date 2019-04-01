@@ -165,7 +165,7 @@ namespace Licor4300_Collect
 
                     groupCount++;
 
-                    Console.WriteLine("Processing group: " + group + "("+groupCount+"/"+allGroups+")"+Environment.NewLine);
+                    Console.WriteLine("Processing group: " + group + "("+groupCount+"/"+allGroups+")");
                     Directory.CreateDirectory(selectedPath + @"\" + group);
                     
 
@@ -260,7 +260,7 @@ namespace Licor4300_Collect
                             byte[] lnByte = null;
                             using (var reader2 = new System.IO.BinaryReader(tmpRes2.GetResponseStream()))
                             {
-                              lnByte = reader2.ReadBytes(1 * 1024 * 1024 * 50);
+                              lnByte = reader2.ReadBytes(1 * 1024 * 1024 * 500);
                            
                             }
 
@@ -317,6 +317,8 @@ namespace Licor4300_Collect
 
                         }
                     }
+                    Console.WriteLine("");
+
 
                 }
 
